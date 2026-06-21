@@ -1,3 +1,4 @@
+using HelpDesk.Application;
 using HelpDesk.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,8 @@ namespace HelpDesk
 
             builder.Services.AddDbContext<HelpDeskDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
             var app = builder.Build();
 
