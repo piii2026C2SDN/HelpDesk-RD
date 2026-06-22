@@ -1,4 +1,5 @@
-
+using HelpDesk.Data;
+using Microsoft.EntityFrameworkCore;
 namespace HelpDesk
 {
     public class Program
@@ -11,6 +12,9 @@ namespace HelpDesk
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
             builder.Services.AddOpenApi();
 
             var app = builder.Build();
