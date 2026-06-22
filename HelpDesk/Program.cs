@@ -1,6 +1,8 @@
 using HelpDesk.Data;
 using Microsoft.EntityFrameworkCore;
+using HelpDesk.Services;
 namespace HelpDesk
+
 {
     public class Program
     {
@@ -12,6 +14,7 @@ namespace HelpDesk
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+            builder.Services.AddScoped<PasswordService>();
             builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
