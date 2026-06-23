@@ -1,9 +1,10 @@
 using HelpDesk.Data;
-using Microsoft.EntityFrameworkCore;
 using HelpDesk.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+
 namespace HelpDesk
 
 {
@@ -37,7 +38,7 @@ namespace HelpDesk
                 });
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddOpenApi();
 
@@ -54,7 +55,6 @@ namespace HelpDesk
             app.UseAuthentication();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
