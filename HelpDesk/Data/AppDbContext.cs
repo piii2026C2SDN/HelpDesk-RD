@@ -1,5 +1,4 @@
 ﻿using HelpDesk.Entities;
-using HelpDesk.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HelpDesk.Data;
