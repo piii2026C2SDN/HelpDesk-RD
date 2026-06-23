@@ -1,7 +1,6 @@
 ﻿using HelpDesk.Data;
 using HelpDesk.DTOs;
 using HelpDesk.Entities;
-using HelpDesk.Models;
 using HelpDesk.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,11 +13,13 @@ public class AuthController : ControllerBase
 {
     private readonly AppDbContext _context;
     private readonly PasswordService _passwordService;
+    private readonly JwtService _jwtService;
 
-    public AuthController(AppDbContext context, PasswordService passwordService)
+    public AuthController(AppDbContext context, PasswordService passwordService, JwtService jwtService)
     {
         _context = context;
         _passwordService = passwordService;
+        _jwtService = jwtService;
     }
 
     [HttpPost("register")]
@@ -46,6 +47,24 @@ public class AuthController : ControllerBase
             user.Id,
             user.Email,
             Role = user.Role.ToString()
+        });
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(LoginRequest request)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(user => user.Email == request.Email);
+
+        if (user is null || !_passwordService.VerifyPassword(request.Password, user.PasswordHash))
+        {
+            return Unauthorized("Invalid credentials.");
+        }
+
+        var token = _jwtService.GenerateToken(user);
+
+        return Ok(new AuthResponse
+        {
+            Token = token
         });
     }
 }

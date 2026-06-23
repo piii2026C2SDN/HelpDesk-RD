@@ -1,6 +1,4 @@
-﻿using HelpDesk.Entities;
-
-namespace HelpDesk.Models;
+﻿namespace HelpDesk.Entities;
 
 public class User
 {
