@@ -4,6 +4,8 @@ using HelpDesk.Entities;
 using HelpDesk.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace HelpDesk.Controllers;
 
@@ -65,6 +67,17 @@ public class AuthController : ControllerBase
         return Ok(new AuthResponse
         {
             Token = token
+        });
+    }
+    [Authorize]
+    [HttpGet("me")]
+    public IActionResult Me()
+    {
+        return Ok(new
+        {
+            Id = User.FindFirstValue(ClaimTypes.NameIdentifier),
+            Email = User.FindFirstValue(ClaimTypes.Email),
+            Role = User.FindFirstValue(ClaimTypes.Role)
         });
     }
 }
