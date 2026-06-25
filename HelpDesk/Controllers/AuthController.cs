@@ -1,4 +1,5 @@
-﻿using HelpDesk.Data;
+﻿using HelpDesk.Exceptions;
+using HelpDesk.Data;
 using HelpDesk.DTOs;
 using HelpDesk.Entities;
 using HelpDesk.Services;
@@ -16,40 +17,38 @@ public class AuthController : ControllerBase
     private readonly AppDbContext _context;
     private readonly PasswordService _passwordService;
     private readonly JwtService _jwtService;
+    private readonly AuthService _authService;
 
-    public AuthController(AppDbContext context, PasswordService passwordService, JwtService jwtService)
+    public AuthController(
+    AppDbContext context,
+    PasswordService passwordService,
+    JwtService jwtService,
+    AuthService authService)
     {
         _context = context;
         _passwordService = passwordService;
         _jwtService = jwtService;
+        _authService = authService;
     }
 
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
-        var emailExists = await _context.Users.AnyAsync(user => user.Email == request.Email);
-
-        if (emailExists)
+        try
         {
-            return Conflict("Email already exists.");
+            var user = await _authService.RegisterAsync(request);
+
+            return Created(string.Empty, new
+            {
+                user.Id,
+                user.Email,
+                Role = user.Role.ToString()
+            });
         }
-
-        var user = new User
+        catch (DuplicateEmailException exception)
         {
-            Email = request.Email,
-            PasswordHash = _passwordService.HashPassword(request.Password),
-            Role = request.Role
-        };
-
-        _context.Users.Add(user);
-        await _context.SaveChangesAsync();
-
-        return Created(string.Empty, new
-        {
-            user.Id,
-            user.Email,
-            Role = user.Role.ToString()
-        });
+            return Conflict(exception.Message);
+        }
     }
 
     [HttpPost("login")]
