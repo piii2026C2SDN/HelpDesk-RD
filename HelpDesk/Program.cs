@@ -20,6 +20,7 @@ namespace HelpDesk
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddScoped<PasswordService>();
             builder.Services.AddScoped<JwtService>();
+            builder.Services.AddScoped<AuthService>();
             var jwtKey = builder.Configuration["Jwt:Key"]!;
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
