@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\abel\\HelpDesk-RD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2A91B12-E574-4FA3-A7FF-2D8DEA5CC442}|HelpDesk.Tests\\HelpDesk.Tests.csproj|c:\\users\\abel\\helpdesk-rd\\helpdesk.tests\\categoriaservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2A91B12-E574-4FA3-A7FF-2D8DEA5CC442}|HelpDesk.Tests\\HelpDesk.Tests.csproj|solutionrelative:helpdesk.tests\\categoriaservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriaServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\abel\\HelpDesk-RD\\HelpDesk.Tests\\CategoriaServiceTests.cs",
+              "RelativeDocumentMoniker": "HelpDesk.Tests\\CategoriaServiceTests.cs",
+              "ToolTip": "C:\\Users\\abel\\HelpDesk-RD\\HelpDesk.Tests\\CategoriaServiceTests.cs",
+              "RelativeToolTip": "HelpDesk.Tests\\CategoriaServiceTests.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T18:23:19.787Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
