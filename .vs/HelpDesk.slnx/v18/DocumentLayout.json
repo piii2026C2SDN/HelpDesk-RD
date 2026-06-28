@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\elyoa\\HelpDesk-RD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3A29435A-AFBB-A2BD-9BBE-E9AC8FE2D16B}|HelpDesk\\HelpDesk.csproj|c:\\users\\elyoa\\helpdesk-rd\\helpdesk\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3A29435A-AFBB-A2BD-9BBE-E9AC8FE2D16B}|HelpDesk\\HelpDesk.csproj|solutionrelative:helpdesk\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{705FF382-1933-D988-BD78-28FE5EA880EC}|HelpDesk.Domain\\HelpDesk.Domain.csproj|c:\\users\\elyoa\\helpdesk-rd\\helpdesk.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{705FF382-1933-D988-BD78-28FE5EA880EC}|HelpDesk.Domain\\HelpDesk.Domain.csproj|solutionrelative:helpdesk.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\elyoa\\HelpDesk-RD\\HelpDesk\\appsettings.json",
+              "RelativeDocumentMoniker": "HelpDesk\\appsettings.json",
+              "ToolTip": "C:\\Users\\elyoa\\HelpDesk-RD\\HelpDesk\\appsettings.json",
+              "RelativeToolTip": "HelpDesk\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-28T03:27:24.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\elyoa\\HelpDesk-RD\\HelpDesk.Domain\\Entities\\Categoria.cs",
+              "RelativeDocumentMoniker": "HelpDesk.Domain\\Entities\\Categoria.cs",
+              "ToolTip": "C:\\Users\\elyoa\\HelpDesk-RD\\HelpDesk.Domain\\Entities\\Categoria.cs",
+              "RelativeToolTip": "HelpDesk.Domain\\Entities\\Categoria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T02:05:33.067Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
