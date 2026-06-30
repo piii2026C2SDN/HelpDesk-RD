@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="HelpDesk.Tests/HelpDesk.Tests.csproj" Id="a2a91b12-e574-4fa3-a7ff-2d8dea5cc442" />
   <Project Path="HelpDesk/HelpDesk.csproj" />
 </Solution>
