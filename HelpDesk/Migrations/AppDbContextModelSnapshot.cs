@@ -22,7 +22,7 @@ namespace HelpDesk.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HelpDesk.Models.User", b =>
+            modelBuilder.Entity("HelpDesk.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
