@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpDesk.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260622232246_CreateUsersTable")]
-    partial class CreateUsersTable
+    [Migration("20260712191114_InitAuth")]
+    partial class InitAuth
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace HelpDesk.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HelpDesk.Models.User", b =>
+            modelBuilder.Entity("HelpDesk.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
